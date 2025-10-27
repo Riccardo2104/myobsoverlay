@@ -3,7 +3,17 @@
   "description": "Overlay Node.js app.",
   "author": "Jeff Geerling <geerlingguy@mac.com>",
   "dependencies": {
-    "express": "4.x"
+    "express": "^4.21.2"
   },
-  "engine": "node >= 0.10.6"
+  "engine": "node >= 0.10.6",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.10"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev-server": "nodemon server.js",
+    "dev-browser": "browser-sync start --proxy \"http://localhost:8080\" --files \"*.html, config.json, public/**/*.css, public/**/*.js\" --no-notify",    "dev": "concurrently \"npm run dev-server\" \"npm run dev-browser\""
+  }
 }

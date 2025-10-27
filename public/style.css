@@ -45,9 +45,11 @@ body {
 
 .right {
   margin-left: 60px;
-  width: 125px;
+ /*width: 125px;*/ 
+ /* min-width: 125px; */
+ width: fit-content;
   color: #bc1142;
-  background-color: #fff;
+  background-color: #f0f0f0;
 }
 
 .right:before {
